@@ -165,7 +165,7 @@ return [
         Encore\Admin\Providers\AdminServiceProvider::class,
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Webpatser\Countries\CountriesServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -230,6 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Countries' => Webpatser\Countries\CountriesFacade::class,
 
     ],
 

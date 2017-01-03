@@ -10,7 +10,10 @@
             </h1>
             <h3>Free Bootstrap Themes &amp; Templates</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="#about" class="btn btn-dark btn-lg">
+                {{__('Explore More')}}
+                <i class="fa fa-arrow-circle-right"></i>
+            </a>
         </div>
     </header>
 
@@ -20,7 +23,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>The World Hockey Database</h2>
-                    <p class="lead">All clubs from German Bundesliga and german</p>
+                    <p class="lead">All clubs from German Bundesliga and german {{link_to_route('federation.index',__('All Federations'), ['locale' => $locale])}}</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -54,7 +57,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-group fa-stack-1x text-primary"></i>
+                                <i class="fa fa-home fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
                                     <strong>Hockey Clubs</strong>
@@ -168,10 +171,10 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4853.594722541079!2d13.422591805635058!3d52.53710041095226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9b0415124da1791e!2sSG+Rotation+Prenzlauer+Berg+e.V.+-+Abteilung+Hockey!5e0!3m2!1sen!2sde!4v1483449615897" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
         <br />
         <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+            <a href="https://www.google.de/maps/place/SG+Rotation+Prenzlauer+Berg/@52.5379161,13.4137483,15z/data=!4m2!3m1!1s0x0:0x650375ddd5b6fa4?sa=X&ved=0ahUKEwiWhNXIh6bRAhVoKcAKHQSsBusQ_BIIiwEwCg"></a>
         </small>
         </iframe>
     </section>

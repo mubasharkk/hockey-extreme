@@ -36,6 +36,9 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['site.locales']], functio
         'uses' => 'HomeController@dashboard',
         'as'   => 'dashboard'
     ]);
+
+    Route::resource('federation', 'Hockey\FederationController');
+
 });
 
 
