@@ -32,6 +32,11 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['site.locales']], functio
         'as'   => 'homepage'
     ]);
 
+    Route::get('/contact', [
+        'uses' => 'HomeController@contact',
+        'as'   => 'contact-page'
+    ]);
+
     Route::get('/dashboard', [
         'uses' => 'HomeController@dashboard',
         'as'   => 'dashboard'

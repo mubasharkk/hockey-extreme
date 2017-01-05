@@ -12,7 +12,7 @@ class ScrapCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'scrap:data {type}';
+    protected $signature = 'scrap:data {type} {--L|level=2}';
 
     /**
      * The console command description.
@@ -40,10 +40,9 @@ class ScrapCommand extends Command
     {
         switch ($this->argument('type')){
             case 'fih':
-
                 $scrapper = new Scrappers\FederationScrapper();
-
-                print $scrapper->get();
+                $scrapper->get($this->option('level'));
+                print $scrapper->message();
                 break;
         }
     }

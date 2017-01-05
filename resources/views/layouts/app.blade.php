@@ -2,7 +2,10 @@
 
 
 @section('page-content')
-    @include('layouts.header')
+    <div class="container">
+        <h2>{{config('app.name')}}</h2>
+        <hr/>
+        @yield('content')
+    </div>
 
-    @yield('content')
 @endsection

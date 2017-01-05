@@ -5,7 +5,7 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'  => 'Social Admin',
+    'name'  => 'Hockey Admin',
 
     /*
      * Laravel-admin url prefix.

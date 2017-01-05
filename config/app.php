@@ -166,6 +166,8 @@ return [
         Xinax\LaravelGettext\LaravelGettextServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Webpatser\Countries\CountriesServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -231,6 +233,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Countries' => Webpatser\Countries\CountriesFacade::class,
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class
 
     ],
 

@@ -10,6 +10,10 @@ class FederationController extends Controller
 {
     public function index()
     {
-        return Federation::all();
+        $federations = Federation::all();
+
+        return view('pages.federations.index',[
+            'federations' => $federations
+        ]);
     }
 }

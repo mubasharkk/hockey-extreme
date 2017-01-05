@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        return view('pages.general.welcome');
     }
 
     /**
@@ -35,5 +35,10 @@ class HomeController extends Controller
     {
         LaravelGettext::setLocale($locale);
         return Redirect::to("{$locale}/");
+    }
+
+    public function contact()
+    {
+        return view('pages.general.contact');
     }
 }

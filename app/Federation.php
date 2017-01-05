@@ -14,6 +14,6 @@ class Federation extends Model
 
     function country ()
     {
-        return $this->hasOne('App\Country');
+        return $this->belongsTo('App\Country');
     }
 }
