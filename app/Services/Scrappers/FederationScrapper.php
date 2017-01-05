@@ -34,7 +34,7 @@ class FederationScrapper implements ScrapperInterface
     {
         $crawler = $this->client->request('GET', self::URL);
 
-        $crawler->filter('div.federation_group:nth-of-type(2) ul li a')->each(function ($node) {
+        $crawler->filter('div.federation_group:nth-of-type(4) ul li a')->each(function ($node) {
             $country = strtolower(trim($node->text()));
             $url = self::ROOT_URL . $node->attr('href');
             $this->links [$country] = $this->scrapIndividualData($country, $url);
@@ -49,7 +49,7 @@ class FederationScrapper implements ScrapperInterface
         $this->item['name'] = trim($crawler->filter('h2.sub_title')->first()->text());
 
         $crawler->filter('div.grid_8 div.body_text table tr')->each(function ($node) {
-            list($type, $value) = explode(':', trim($node->text()));
+            @list($type, $value) = explode(':', trim($node->text()));
             if(in_array($type, ['President', 'Address'])){
                 $this->item[strtolower($type)] = trim($value);
             }
@@ -65,20 +65,22 @@ class FederationScrapper implements ScrapperInterface
                 $this->item['established_date'] = $date->format('Y-m-d');
             }
         });
-git 
+
         $crawler->filter('div.grid_4 ul.info div.no_wrap')->each(function ($node) {
-            print $node->text();
+            $type = $node->children()->eq(0)->text();
+            if(in_array($type, ['Email', 'Phone'])){
+                $this->item[strtolower($type)] = $node->children()->eq(1)->text();
+            }
         });
 
-        $this->item['president_name']  = $this->item['president'];
+        if(!empty($this->item['president'])){
+            $this->item['president_name']  = $this->item['president'];
+            unset($this->item['president']);
+        }
 
-        unset($this->item['president']);
-
-//        $this->saveItem($country, $item);
         print_r($this->item);
-//        die;
-
-//        return $item;
+        $this->item['id'] = $this->saveItem($country, $this->item);
+        return $this->item;
     }
 
     private function saveItem($country, $item)
